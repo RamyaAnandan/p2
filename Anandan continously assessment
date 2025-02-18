@@ -1,0 +1,30 @@
+#include <iostream>
+
+class Student {
+private:
+    static int totalStudents; // Static variable to track the number of students
+
+public:
+    // Constructor that increments totalStudents when a new student is created
+    Student() {
+        totalStudents++;
+    }
+
+    // Static method to get the total number of students enrolled
+    static int getTotalStudents() {
+        return totalStudents;
+    }
+};
+
+// Initialize static variable outside the class
+int Student::totalStudents = 0;
+
+int main() {
+    // Creating students
+    Student s1, s2, s3;
+
+    // Getting the total number of students
+    std::cout << "Total Students Enrolled: " << Student::getTotalStudents() << std::endl;
+
+    return 0;
+}
